@@ -1,0 +1,27 @@
+<% include partials/header.ejs %>
+
+<h1><%= title %></h1>
+<a href="/drinks/add">Add a Drink</a>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Size</th>
+    <th>Alcohol %</th>
+  </tr>
+  <% for (var i=0; i < drinks.length; i++) { %>
+    <tr>
+      <td><%= drinks[i].name %></td>
+      <td><%= drinks[i].drinkType %></td>
+      <td><%= drinks[i].size %> <%= drinks[i].units %></td>
+      <td><%= drinks[i].alcoholPercentage %></td>
+      <td><a href="/drinks/<%= drinks[0]._id %>">Edit</a></td>
+      <td><a href="/drinks/delete/<%= drinks[0]._id
+        %>"class="confirmation">Delete</a></td>
+
+
+    </tr>
+  <% } %>
+</table>
+
+<% include partials/footer.ejs %>
